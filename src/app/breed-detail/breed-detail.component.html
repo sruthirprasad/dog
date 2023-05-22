@@ -1,0 +1,10 @@
+<div class="breed-detail" *ngIf="breed">
+    <h2>{{breed.name}} Details</h2>
+    <div class="card">
+    <div><span>id: </span>{{breed.id}}</div>
+    <div *ngFor="let item of breed | keyvalue">
+        {{item.key}}:{{item.value}}
+      </div>
+    </div>
+  </div>
+  <button type="button" (click)="goBack()">go back</button>

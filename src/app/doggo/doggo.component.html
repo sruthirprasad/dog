@@ -1,0 +1,9 @@
+
+
+<!-- <app-select-breed></app-select-breed> -->
+<div class="doggo-list">
+    <a *ngFor="let dog of doggo"
+    routerLink="/breed-detail/{{dog.id}}">
+        {{dog.name}}
+    </a>
+  </div>
