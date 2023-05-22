@@ -1,21 +1,20 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
-import {DoggoService} from '../doggo/doggo.service';
+import { DoggoService } from '../doggo/doggo.service';
 import { Doggo } from './doggo';
 
 @Component({
   selector: 'app-doggo',
   templateUrl: './doggo.component.html',
-  styleUrls: [ './doggo.component.css' ]
+  styleUrls: ['./doggo.component.css']
 
 })
 export class DoggoComponent implements OnInit {
 
-   //doggo$!: Observable<Doggo[]>;
 
-   doggo: Doggo[] = [];
+  doggo: Doggo[] = [];
   constructor(private dogService: DoggoService) {
   }
   ngOnInit(): void {
@@ -25,8 +24,8 @@ export class DoggoComponent implements OnInit {
   }
   getDoggo(): void {
     this.dogService.dogBreeds()
-    .subscribe(doggo => this.doggo = doggo);
+      .subscribe(doggo => this.doggo = doggo);
   }
-  
-  
+
+
 }
